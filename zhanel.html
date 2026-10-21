@@ -1,0 +1,874 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff8f1">
+<meta name="description" content="Тёплый тест от Айым для Жанель: проверим, как хорошо вы знаете друг друга.">
+<title>Для Жанель от Айым — тест на дружбу ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+  --pink: #f4a7d5;
+  --purple: #c4a8ff;
+  --cyan: #a9e8e3;
+  --bg: #100b1d;
+  --panel: rgba(29, 22, 43, .82);
+  --text: #fbf7ff;
+  --muted: #b6a9c7;
+  --line: rgba(231, 210, 255, .13);
+}
+* { box-sizing: border-box; }
+html { min-width: 320px; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  background:
+    radial-gradient(ellipse at 13% 8%, rgba(113, 75, 145, .26), transparent 36%),
+    radial-gradient(ellipse at 91% 58%, rgba(114, 68, 124, .19), transparent 35%),
+    linear-gradient(145deg, #100b1d 0%, #171020 52%, #100b1b 100%);
+  overflow-x: hidden;
+}
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+  content: "";
+  pointer-events: none;
+}
+#stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 18px 40px, #fff 99%, transparent),
+    radial-gradient(1px 1px at 110px 85px, #d9c7ff 99%, transparent),
+    radial-gradient(1.5px 1.5px at 165px 25px, #f4c8e5 99%, transparent);
+  background-size: 210px 175px;
+  opacity: .28;
+  animation: drift 42s linear infinite;
+}
+@keyframes drift { to { background-position: 210px 350px; } }
+.wrap { width: min(820px, calc(100% - 40px)); margin: auto; padding: 28px 0 38px; }
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 74px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #f4eaff;
+  font: 800 12px 'Manrope', sans-serif;
+  letter-spacing: 1.5px;
+}
+.brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgba(244, 167, 213, .42);
+  border-radius: 12px;
+  color: var(--pink);
+  background: rgba(244, 167, 213, .08);
+  font-size: 17px;
+  box-shadow: 0 0 24px rgba(244, 167, 213, .11);
+}
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: #c9bdcf;
+  background: rgba(255,255,255,.025);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.status::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a4e6ba;
+  box-shadow: 0 0 12px #a4e6ba99;
+  content: "";
+}
+.hero { position: relative; margin: 0 auto 38px; text-align: center; }
+.hero::before, .hero::after {
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgba(199, 163, 255, .09);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+.hero::before { width: 310px; height: 310px; top: -48px; left: 50%; transform: translateX(-50%); }
+.hero::after { width: 390px; height: 390px; top: -88px; left: 50%; transform: translateX(-50%); border-color: rgba(199, 163, 255, .045); }
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 17px;
+  color: var(--pink);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+}
+.eyebrow::before, .eyebrow::after { width: 19px; height: 1px; background: currentColor; content: ""; opacity: .65; }
+.planet {
+  display: block;
+  margin: 0 auto 7px;
+  font-size: 50px;
+  filter: drop-shadow(0 0 28px rgba(244, 167, 213, .38));
+  animation: float 5s ease-in-out infinite;
+}
+@keyframes float { 50% { transform: translateY(-8px) rotate(4deg); } }
+h1 {
+  margin: 0;
+  color: transparent;
+  background: linear-gradient(105deg, #fff 16%, #f5c3e3 55%, #c7b5ff 90%);
+  background-clip: text;
+  font: 800 clamp(42px, 8vw, 70px)/1.12 'Manrope', sans-serif;
+  letter-spacing: -3.5px;
+  filter: drop-shadow(0 8px 34px rgba(201, 166, 255, .17));
+}
+.hero-tagline {
+  margin-top: 12px;
+  color: #dec8f1;
+  font: 700 10px 'Manrope', sans-serif;
+  letter-spacing: 3px;
+}
+.subtitle { color: var(--muted); line-height: 1.8; font-size: 14px; }
+.hero .subtitle { max-width: 495px; margin: 17px auto 0; }
+.hero .subtitle b { color: #f8efff; font-weight: 600; }
+.card {
+  position: relative;
+  padding: clamp(23px, 5vw, 38px);
+  overflow: hidden;
+  border: 1px solid rgba(218, 190, 255, .16);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(35, 26, 51, .94), var(--panel));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .27), inset 0 1px 0 rgba(255,255,255,.045);
+  backdrop-filter: blur(18px);
+}
+.card::before {
+  position: absolute;
+  top: 0;
+  left: 9%;
+  width: 82%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(244, 167, 213, .62), transparent);
+  content: "";
+}
+.hidden { display: none !important; }
+.field { margin: 25px 0 20px; }
+label { display: block; margin-bottom: 10px; color: #ded2e9; font-size: 10px; font-weight: 700; letter-spacing: 1.2px; }
+input, textarea {
+  width: 100%;
+  border: 1px solid rgba(218, 190, 255, .17);
+  border-radius: 13px;
+  outline: none;
+  padding: 15px 16px;
+  color: white;
+  background: rgba(13, 9, 22, .55);
+  font: 14px 'DM Sans', sans-serif;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+input::placeholder, textarea::placeholder { color: #857891; }
+input:focus, textarea:focus {
+  border-color: rgba(244, 167, 213, .72);
+  background: rgba(13, 9, 22, .78);
+  box-shadow: 0 0 0 4px rgba(244, 167, 213, .09);
+}
+textarea { min-height: 106px; resize: vertical; }
+button {
+  min-height: 50px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 13px;
+  padding: 14px 18px;
+  font: 700 11px 'Manrope', sans-serif;
+  letter-spacing: .8px;
+  transition: transform .2s, filter .2s, box-shadow .2s, border-color .2s;
+}
+button:hover { transform: translateY(-2px); filter: brightness(1.08); }
+button:active { transform: translateY(0); }
+button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+.primary {
+  width: 100%;
+  color: #28162e;
+  background: linear-gradient(105deg, #f3a9d0, #d1b0ef 58%, #b1dedb);
+  box-shadow: 0 8px 24px rgba(218, 152, 211, .18);
+}
+.primary:hover { box-shadow: 0 11px 30px rgba(218, 152, 211, .28); }
+.secondary {
+  border: 1px solid rgba(218, 190, 255, .2);
+  color: #e9dff3;
+  background: rgba(255,255,255,.035);
+}
+.secondary:hover { border-color: rgba(218, 190, 255, .44); }
+h2 { margin: 12px 0; color: #fbf7ff; font: 700 20px/1.5 'Manrope', sans-serif; letter-spacing: -.4px; }
+#start > .subtitle { margin: 8px 0 0; font-size: 13px; }
+.mission-meta {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+.meta-chip {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid rgba(218, 190, 255, .11);
+  border-radius: 12px;
+  color: #b9abc8;
+  background: rgba(255,255,255,.025);
+  font-size: 11px;
+}
+.meta-chip strong { display: block; margin-bottom: 4px; color: #f6e9ff; font: 700 14px 'Manrope', sans-serif; }
+.qnum { color: var(--pink); font: 700 10px 'Manrope', sans-serif; letter-spacing: 1.7px; }
+.progress-row { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 11px; color: #c4b7d1; font: 600 10px 'Manrope', sans-serif; letter-spacing: .8px; }
+.progress { height: 5px; overflow: hidden; border-radius: 20px; background: rgba(255,255,255,.09); }
+.bar { width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--pink), var(--purple), var(--cyan)); box-shadow: 0 0 12px rgba(244, 167, 213, .5); transition: width .35s ease; }
+.question { min-height: 112px; margin-top: 28px; }
+.question h2 { max-width: 650px; margin-top: 10px; font-size: clamp(19px, 3vw, 24px); }
+.hint { color: #9d8eae; font-size: 11px; line-height: 1.7; }
+.nav { display: flex; gap: 12px; margin-top: 22px; }
+.nav button { flex: 1; }
+.nav .secondary { flex: .72; }
+.center { text-align: center; }
+.result-icon { margin: 0 0 12px; text-align: center; font-size: 48px; filter: drop-shadow(0 0 17px rgba(244, 167, 213, .35)); }
+.score { margin: 16px 0 6px; color: var(--pink); text-align: center; font: 800 clamp(44px, 10vw, 62px) 'Manrope', sans-serif; letter-spacing: -3px; }
+.result-note { color: #c9bce8; line-height: 1.8; font-size: 13px; }
+.review { margin-top: 25px; }
+.review-item {
+  margin: 10px 0;
+  padding: 15px 16px;
+  border: 1px solid rgba(218, 190, 255, .1);
+  border-radius: 13px;
+  background: rgba(255,255,255,.025);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.review-item b { color: #f6eaff; }
+.good { color: #9de8c6; }
+.bad { color: #f3a5bb; }
+.review-intro { margin: 8px 0 20px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.review-counter { margin: 18px 0 8px; color: var(--cyan); font: 700 11px 'Manrope', sans-serif; }
+.answer-review { margin: 12px 0; padding: 17px; border: 1px solid rgba(218, 190, 255, .12); border-radius: 14px; background: rgba(255,255,255,.025); }
+.answer-review h3 { margin: 0 0 10px; color: #f6eaff; font: 700 13px/1.6 'Manrope', sans-serif; }
+.answer-review-text { margin: 0; color: #c9bdd5; font-size: 12px; line-height: 1.75; overflow-wrap: anywhere; }
+.answer-review-actions { display: flex; gap: 9px; margin-top: 14px; }
+.answer-review-actions button { flex: 1; min-height: 42px; padding: 10px; font-size: 10px; }
+.answer-review-actions .mark-correct { border: 1px solid rgba(157, 232, 198, .25); color: #b7f0d3; background: rgba(91, 174, 131, .08); }
+.answer-review-actions .mark-incorrect { border: 1px solid rgba(243, 165, 187, .24); color: #f3b2c3; background: rgba(174, 91, 117, .08); }
+.answer-review-actions .selected.mark-correct { border-color: #9de8c6; background: rgba(91, 174, 131, .2); box-shadow: 0 0 0 2px rgba(157, 232, 198, .1); }
+.answer-review-actions .selected.mark-incorrect { border-color: #f3a5bb; background: rgba(174, 91, 117, .2); box-shadow: 0 0 0 2px rgba(243, 165, 187, .1); }
+.answer-skipped { display: inline-block; margin-top: 12px; color: #aa9cb8; font-size: 11px; }
+button:disabled { cursor: not-allowed; opacity: .45; transform: none; filter: none; box-shadow: none; }
+footer { margin-top: 30px; color: #82758f; text-align: center; font-size: 9px; letter-spacing: 1.2px; }
+@media (max-width: 560px) {
+  .wrap { width: min(100% - 30px, 480px); padding-top: 19px; }
+  .top { margin-bottom: 55px; }
+  .brand { gap: 8px; font-size: 10px; letter-spacing: 1px; }
+  .brand-mark { width: 31px; height: 31px; }
+  .status { padding: 8px 10px; font-size: 8px; letter-spacing: .6px; }
+  .hero { margin-bottom: 29px; }
+  .hero::before { width: 250px; height: 250px; top: -30px; }
+  .hero::after { width: 320px; height: 320px; top: -65px; }
+  .planet { font-size: 43px; }
+  h1 { letter-spacing: -2px; }
+  .hero-tagline { font-size: 8px; letter-spacing: 2px; }
+  .hero .subtitle { font-size: 12px; }
+  .card { border-radius: 20px; }
+  .mission-meta { gap: 8px; }
+  .meta-chip { padding: 10px; font-size: 10px; }
+  .nav { gap: 8px; }
+  .nav button { padding-inline: 10px; font-size: 9px; }
+  .nav .secondary { flex: .8; }
+  .answer-review { padding: 14px; }
+  .answer-review-actions { flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+/* A warm, handwritten scrapbook made for a best friend. */
+:root {
+  color-scheme: light;
+  --pink: #d96c77;
+  --purple: #a87483;
+  --cyan: #8caaa0;
+  --bg: #fff8f1;
+  --panel: #fffdf9;
+  --text: #43353b;
+  --muted: #89777b;
+  --line: rgba(157, 112, 111, .18);
+}
+body {
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  background:
+    radial-gradient(ellipse at 7% 12%, rgba(255, 211, 192, .52), transparent 29%),
+    radial-gradient(ellipse at 93% 52%, rgba(239, 218, 218, .58), transparent 31%),
+    #fff8f1;
+}
+body::before {
+  z-index: 0;
+  background-image: radial-gradient(rgba(139, 103, 97, .11) .7px, transparent .7px);
+  background-size: 17px 17px;
+  mask-image: linear-gradient(to bottom, black, transparent 75%);
+  opacity: .38;
+}
+#stars {
+  z-index: 0;
+  background-image:
+    radial-gradient(3px 3px at 25px 35px, #e79c99 99%, transparent),
+    radial-gradient(2px 2px at 110px 85px, #d4a486 99%, transparent),
+    radial-gradient(2px 2px at 165px 25px, #b89aab 99%, transparent);
+  background-size: 210px 175px;
+  opacity: .22;
+  animation: none;
+}
+.wrap { position: relative; z-index: 1; width: min(760px, calc(100% - 40px)); padding-top: 24px; }
+.top { margin-bottom: 57px; }
+.brand {
+  gap: 10px;
+  color: #59464b;
+  font: 700 11px 'DM Sans', sans-serif;
+  letter-spacing: 1.1px;
+}
+.brand-mark {
+  border-color: #edc4b8;
+  border-radius: 50%;
+  color: #d96c77;
+  background: #fff1e9;
+  box-shadow: none;
+}
+.status {
+  border-color: #efd8d0;
+  color: #8f666b;
+  background: rgba(255, 255, 255, .6);
+  font-size: 9px;
+  letter-spacing: .6px;
+}
+.status::before { background: #d9898c; box-shadow: 0 0 0 3px #f5e3dc; }
+.hero { margin-bottom: 39px; }
+.hero::before, .hero::after { border-color: rgba(204, 151, 143, .13); }
+.hero::before { width: 290px; height: 290px; top: -34px; }
+.hero::after { width: 370px; height: 370px; top: -75px; border-color: rgba(204, 151, 143, .08); }
+.planet {
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 9px;
+  border: 1px solid #f0d7cc;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .72);
+  font-size: 33px;
+  filter: drop-shadow(0 8px 13px rgba(169, 112, 106, .16));
+  animation: float 5s ease-in-out infinite;
+}
+h1 {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #60434a;
+  background: none;
+  font: 700 clamp(38px, 7vw, 62px)/1.12 'Playfair Display', Georgia, serif;
+  letter-spacing: -1.8px;
+  filter: none;
+}
+.hero-tagline {
+  margin-top: 10px;
+  color: #c27479;
+  font: 600 clamp(25px, 4vw, 32px)/1 'Caveat', cursive;
+  letter-spacing: .2px;
+}
+.subtitle { color: var(--muted); }
+.hero .subtitle { max-width: 470px; margin-top: 13px; font-size: 13px; }
+.hero .subtitle b { color: #725a60; font-weight: 600; }
+.card {
+  border: 1px solid #f0ded4;
+  border-radius: 18px;
+  background: rgba(255, 253, 249, .91);
+  box-shadow: 0 15px 40px rgba(133, 91, 79, .09), 0 2px 7px rgba(133, 91, 79, .04);
+  backdrop-filter: blur(10px);
+}
+.card::before {
+  left: 50%;
+  width: 93px;
+  height: 17px;
+  transform: translateX(-50%) rotate(-2deg);
+  background: rgba(237, 197, 178, .62);
+}
+.qnum { color: #bc7778; font: 700 10px 'DM Sans', sans-serif; letter-spacing: 1.25px; }
+h2 {
+  color: #59434a;
+  font: 600 21px/1.45 'Playfair Display', Georgia, serif;
+  letter-spacing: 0;
+}
+#start > .subtitle { color: #89777b; }
+.field { margin-top: 24px; }
+label { color: #735f63; font-size: 10px; letter-spacing: .8px; }
+input, textarea {
+  border-color: #ecdad2;
+  border-radius: 12px;
+  color: #49383e;
+  background: #fffaf6;
+}
+input::placeholder, textarea::placeholder { color: #ae9a99; }
+input:focus, textarea:focus {
+  border-color: #d99391;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(217, 147, 145, .13);
+}
+button { border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 12px; letter-spacing: .2px; }
+button:focus-visible { outline-color: #a45461; }
+.primary {
+  color: white;
+  background: linear-gradient(110deg, #d97c7f, #cf8990 58%, #bd8c9b);
+  box-shadow: 0 7px 18px rgba(195, 111, 119, .2);
+}
+.primary:hover { box-shadow: 0 10px 24px rgba(195, 111, 119, .27); }
+.secondary {
+  border-color: #ead8d1;
+  color: #735f63;
+  background: #fffaf6;
+}
+.secondary:hover { border-color: #d8aaa4; }
+.mission-meta { gap: 9px; margin-top: 20px; }
+.meta-chip {
+  border-color: #f0e5dd;
+  border-radius: 12px;
+  color: #89777b;
+  background: #fffaf6;
+  font-size: 10px;
+}
+.meta-chip strong { color: #77575e; font: 600 14px 'Playfair Display', Georgia, serif; }
+.progress-row { color: #8a7779; font-family: 'DM Sans', sans-serif; letter-spacing: .4px; }
+.progress { background: #f1e5df; }
+.bar {
+  background: linear-gradient(90deg, #e39a91, #c78c9b, #b4a68e);
+  box-shadow: none;
+}
+.question h2 { color: #59434a; }
+.hint { color: #99868a; }
+.result-icon { filter: none; }
+.score { color: #ce777e; font-family: 'Playfair Display', Georgia, serif; letter-spacing: -2px; }
+.result-note { color: #806a70; }
+.review-item {
+  border-color: #f0e3db;
+  border-radius: 12px;
+  background: #fffaf6;
+  color: #766368;
+}
+.review-item b { color: #59434a; }
+.good { color: #54856b; }
+.bad { color: #b96069; }
+.review-intro { color: #89777b; }
+.review-counter { color: #648f80; }
+.answer-review { border-color: #f0e3db; background: #fffaf6; }
+.answer-review h3 { color: #59434a; }
+.answer-review-text { color: #766368; }
+.answer-review-actions .mark-correct {
+  border-color: #cfe1d3;
+  color: #527b62;
+  background: #f2f8f1;
+}
+.answer-review-actions .mark-incorrect {
+  border-color: #efd2cf;
+  color: #a95862;
+  background: #fff4f1;
+}
+.answer-review-actions .selected.mark-correct { border-color: #82ad8d; background: #e4f2e6; box-shadow: 0 0 0 2px rgba(130, 173, 141, .13); }
+.answer-review-actions .selected.mark-incorrect { border-color: #d58a8f; background: #fbe9e6; box-shadow: 0 0 0 2px rgba(213, 138, 143, .13); }
+.answer-skipped { color: #99868a; }
+footer { color: #a18885; font-family: 'Caveat', cursive; font-size: 19px; letter-spacing: .3px; }
+@media (max-width: 560px) {
+  .wrap { width: min(100% - 30px, 480px); }
+  .top { margin-bottom: 47px; }
+  .brand { font-size: 9px; }
+  .status { font-size: 8px; }
+  .hero { margin-bottom: 30px; }
+  .planet { width: 59px; height: 59px; font-size: 29px; }
+  .hero-tagline { font-size: 25px; letter-spacing: 0; }
+  .hero .subtitle { font-size: 12px; }
+  h2 { font-size: 19px; }
+  .meta-chip { padding: 10px 7px; font-size: 9px; }
+  .meta-chip strong { font-size: 12px; }
+}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+<main class="wrap">
+  <div class="top">
+    <div class="brand"><span class="brand-mark">♡</span><span>ПИСЬМО ОТ АЙЫМ <span style="color:#c79791">/</span> ДЛЯ ЖАНЕЛЬ</span></div>
+    <span class="status">МОЕЙ ЛУЧШЕЙ ПОДРУГЕ</span>
+  </div>
+
+  <section class="hero">
+    <div class="planet">💌</div>
+    <h1>Жанель, ты — моя<br>лучшая подруга</h1>
+    <div class="hero-tagline">Айым приготовила для тебя кое-что ♡</div>
+    <p class="subtitle">
+      Давай проверим, как хорошо ты знаешь меня и наши общие истории.<br>
+      <b>15 вопросов от Айым — только для тебя, Жанель ♡</b>
+    </p>
+  </section>
+
+  <section class="card" id="start">
+    <div class="qnum">ОТ АЙЫМ, С ЛЮБОВЬЮ</div>
+    <h2>Жанель, сыграем? 🌷</h2>
+    <p class="subtitle">
+      Я собрала вопросы про себя и наши общие воспоминания. Посмотрим, сколько маленьких деталей ты помнишь — и просто повеселимся!
+    </p>
+    <div class="field">
+      <label for="friend">ТВОЁ ИМЯ</label>
+      <input id="friend" placeholder="Жанель" maxlength="50" autocomplete="given-name" value="Жанель">
+    </div>
+    <button class="primary" type="button" onclick="begin()">Начать нашу игру <span aria-hidden="true">♡</span></button>
+    <div class="mission-meta" aria-label="О тесте">
+      <div class="meta-chip"><strong>15 вопросов</strong>про Айым и вашу дружбу</div>
+      <div class="meta-chip"><strong>~ 3 минуты</strong>вспоминаем вместе</div>
+      <div class="meta-chip"><strong>Много-много</strong>любви ♡</div>
+    </div>
+  </section>
+
+  <section class="card hidden" id="quiz" aria-label="Вопросы теста">
+    <div class="progress-row">
+      <span id="stepLabel">ВОПРОС 01 / 15</span>
+      <span id="percent">7% ПРОЙДЕНО</span>
+    </div>
+    <div class="progress" role="progressbar" aria-label="Прогресс теста" aria-valuemin="0" aria-valuemax="15" aria-valuenow="1"><div class="bar" id="bar"></div></div>
+    <div class="question">
+      <div class="qnum" id="category">PERSONAL DATA</div>
+      <h2 id="questionText" aria-live="polite"></h2>
+      <p class="hint" id="questionHint">Пиши всё, что помнишь, моя хорошая ♡</p>
+    </div>
+    <div class="field">
+      <label for="answer">ТВОЙ ОТВЕТ</label>
+      <textarea id="answer" rows="3" placeholder="Напиши всё, что вспомнишь..." autocomplete="off"></textarea>
+    </div>
+    <div class="nav">
+      <button class="secondary" id="back" type="button" onclick="move(-1)">← Назад</button>
+      <button class="primary" id="next" type="button" onclick="move(1)">Далее →</button>
+    </div>
+    <p class="hint center">♡ Не переживай, ответы сохраняются, пока мы играем.</p>
+  </section>
+
+  <section class="card hidden" id="reviewStage" aria-label="Ручная проверка ответов">
+    <div class="qnum">А ТЕПЕРЬ СВЕРИМСЯ ♡</div>
+    <h2>Айым, проверь ответы подружки 🌷</h2>
+    <p class="review-intro">Передай телефон Айым — вместе перечитайте ответы и выберите, какие из них верные. Результат появится, когда проверите всё.</p>
+    <div class="review-counter" id="reviewCounter" aria-live="polite"></div>
+    <div id="answerReviewList"></div>
+    <button class="primary" id="showResultButton" type="button" onclick="showResults()" disabled>Сначала проверь все ответы</button>
+  </section>
+
+  <section class="card hidden" id="result">
+    <div class="result-icon">💌</div>
+    <div class="center qnum">ОТ АЙЫМ — С ЛЮБОВЬЮ ♡</div>
+    <h2 class="center" id="resultTitle">Вот как хорошо ты меня знаешь!</h2>
+    <div class="score" id="score">0%</div>
+    <p class="center result-note" id="resultText"></p>
+    <div class="review" id="resultReview"></div>
+    <button class="primary" type="button" onclick="downloadResults()" style="margin-top:18px">
+      Сохранить результат ↓
+    </button>
+    <button class="secondary" type="button" onclick="restart()" style="width:100%;margin-top:10px">
+      Пройти ещё раз ↻
+    </button>
+  </section>
+
+  <footer>от Айым для Жанель, с любовью ♡</footer>
+</main>
+
+<script>
+const questions = [
+  {
+    category: "МАЛЕНЬКИЕ СЕКРЕТЫ",
+    text: "Сколько раз Айым красила волосы?"
+  },
+  {
+    category: "ДЕТАЛИ О ТЕБЕ",
+    text: "Сколько штук ресниц у Айым на одном глазу?"
+  },
+  {
+    category: "ТВОИ ИСТОРИИ",
+    text: "Сколько раз в жизни Айым получала букет?"
+  },
+  {
+    category: "СЕКРЕТИКИ",
+    text: "Сколько весит Айым на данный момент?"
+  },
+  {
+    category: "ТВОИ ПРИВЫЧКИ",
+    text: "Какой ноготь Айым кусала больше всего?"
+  },
+  {
+    category: "МАЛЕНЬКИЕ ДЕТАЛИ",
+    text: "Сколько кариесов в зубах Айым?"
+  },
+  {
+    category: "НАШИ ВСТРЕЧИ",
+    text: "Сколько раз Айым ездила на посещение к Диасу, не считая увал?"
+  },
+  {
+    category: "ТВОЙ ХАРАКТЕР",
+    text: "Какие минусы характера есть у Айым?"
+  },
+  {
+    category: "ТВОИ ОСОБЕННОСТИ",
+    text: "В какие сезоны у Айым бывает аллергия?"
+  },
+  {
+    category: "ТВОИ ИСТОРИИ",
+    text: "Сколько парней было у Айым?"
+  },
+  {
+    category: "ВОСПОМИНАНИЯ",
+    text: "Когда у Айым была чёлка?"
+  },
+  {
+    category: "ТВОИ ЛЮБИМЫЕ ВЕЩИ",
+    text: "Сколько у Айым топиков?"
+  },
+  {
+    category: "ТЁПЛЫЕ ВОСПОМИНАНИЯ",
+    text: "Почему Айым плакала в последний раз?"
+  },
+  {
+    category: "ТО, ЧТО ТЫ ЛЮБИШЬ",
+    text: "На какой фрукт у Айым нет аллергии?"
+  },
+  {
+    category: "ЛИЧНЫЕ ДЕТАЛИ",
+    text: "В какой области у Айым на данный момент есть волосы на теле?"
+  }
+];
+
+let current = 0;
+let answers = Array(questions.length).fill("");
+let reviewStatuses = Array(questions.length).fill(null);
+let friendName = "";
+let finalResults = null;
+
+const $ = id => document.getElementById(id);
+
+function begin() {
+  friendName = $("friend").value.trim() || "Моя лучшая подруга";
+  $("start").classList.add("hidden");
+  $("quiz").classList.remove("hidden");
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = questions[current];
+  $("stepLabel").textContent =
+    `ВОПРОС ${String(current + 1).padStart(2, "0")} / ${questions.length}`;
+  $("percent").textContent =
+    `${Math.round((current + 1) / questions.length * 100)}% ПРОЙДЕНО`;
+  $("bar").style.width = `${(current + 1) / questions.length * 100}%`;
+  document.querySelector(".progress").setAttribute("aria-valuenow", current + 1);
+  $("category").textContent = q.category;
+  $("questionText").textContent = q.text;
+  $("answer").value = answers[current];
+  $("back").style.visibility = current === 0 ? "hidden" : "visible";
+  $("next").textContent = current === questions.length - 1
+    ? "УЗНАТЬ РЕЗУЛЬТАТ ✦"
+    : "ДАЛЕЕ →";
+}
+
+function move(direction) {
+  answers[current] = $("answer").value.trim();
+
+  if (direction === 1 && current < questions.length - 1) {
+    current++;
+    renderQuestion();
+  } else if (direction === -1 && current > 0) {
+    current--;
+    renderQuestion();
+  } else if (direction === 1) {
+    beginManualReview();
+  }
+}
+
+function beginManualReview() {
+  $("quiz").classList.add("hidden");
+  $("reviewStage").classList.remove("hidden");
+  renderManualReview();
+}
+
+function renderManualReview() {
+  $("answerReviewList").innerHTML = questions.map((question, i) => {
+    const answer = answers[i];
+    const escapedQuestion = escapeHTML(question.text);
+
+    if (!answer) {
+      return `<article class="answer-review">
+        <h3>${i + 1}. ${escapedQuestion}</h3>
+        <p class="answer-review-text">Ответ не указан</p>
+        <span class="answer-skipped">Пропущено · проверка не требуется</span>
+      </article>`;
+    }
+
+    return `<article class="answer-review">
+      <h3>${i + 1}. ${escapedQuestion}</h3>
+      <p class="answer-review-text">Ответ: ${escapeHTML(answer)}</p>
+      <div class="answer-review-actions" aria-label="Оценка ответа ${i + 1}">
+        <button class="mark-correct${reviewStatuses[i] === "good" ? " selected" : ""}" type="button" aria-pressed="${reviewStatuses[i] === "good"}" onclick="markAnswer(${i}, true)">✓ Верно</button>
+        <button class="mark-incorrect${reviewStatuses[i] === "bad" ? " selected" : ""}" type="button" aria-pressed="${reviewStatuses[i] === "bad"}" onclick="markAnswer(${i}, false)">✕ Неверно</button>
+      </div>
+    </article>`;
+  }).join("");
+  updateReviewProgress();
+}
+
+function markAnswer(index, isCorrect) {
+  reviewStatuses[index] = isCorrect ? "good" : "bad";
+  renderManualReview();
+  const buttonIndex = isCorrect ? 0 : 1;
+  document.querySelectorAll(".answer-review-actions")[index]
+    .querySelectorAll("button")[buttonIndex].focus();
+}
+
+function updateReviewProgress() {
+  const totalToReview = answers.filter(Boolean).length;
+  const reviewed = answers.reduce((count, answer, i) =>
+    count + (answer && reviewStatuses[i] ? 1 : 0), 0);
+  const remaining = totalToReview - reviewed;
+  $("reviewCounter").textContent = `Проверено: ${reviewed} из ${totalToReview}`;
+  $("showResultButton").disabled = remaining > 0;
+  $("showResultButton").textContent = remaining
+    ? `Проверь оставшиеся ответы: ${remaining}`
+    : "Показать результат ✦";
+}
+
+function showResults() {
+  if (answers.some((answer, i) => answer && !reviewStatuses[i])) return;
+  $("reviewStage").classList.add("hidden");
+  $("result").classList.remove("hidden");
+
+  let correct = 0;
+  let checked = 0;
+  let empty = 0;
+
+  const details = questions.map((q, i) => {
+    const answer = answers[i];
+    let status, explanation;
+
+    if (!answer) {
+      status = "empty";
+      empty++;
+      explanation = "Пропущено";
+    } else {
+      checked++;
+      status = reviewStatuses[i];
+      if (status === "good") {
+        correct++;
+        explanation = "Айым засчитала ответ";
+      } else {
+        explanation = "Айым не засчитала ответ";
+      }
+    }
+
+    return { question: q.text, answer: answer || "—", status, explanation };
+  });
+
+  const percent = checked ? Math.round(correct / checked * 100) : 0;
+
+  $("score").textContent = checked ? `${percent}%` : "—";
+  $("resultTitle").textContent = `${friendName}, вот твой результат!`;
+
+  let message;
+  if (!checked) {
+    message = "В этот раз ты пропустила все вопросы. Давай сыграем ещё раз, моя хорошая ♡";
+  } else if (percent === 100) {
+    message = "Ты помнишь обо мне всё! Как же мне повезло с такой лучшей подругой 💗";
+  } else if (percent >= 80) {
+    message = "Ты знаешь меня лучше всех. Спасибо, что ты рядом, моя родная ✨";
+  } else if (percent >= 50) {
+    message = "Мы столько всего пережили — и впереди ещё больше наших историй! 🌷";
+  } else {
+    message = "Главное, что мы есть друг у друга. Остальные истории ещё успеем вспомнить 💌";
+  }
+
+  $("resultText").textContent = message +
+    (checked ? ` Айым вручную засчитала ${correct} из ${checked} ответов.` : "") +
+    (empty ? ` Пропущено вопросов: ${empty}.` : "");
+
+  $("resultReview").innerHTML = details.map((item, i) => `
+    <div class="review-item">
+      <b>${i + 1}. ${escapeHTML(item.question)}</b><br>
+      Твой ответ: ${escapeHTML(item.answer)}<br>
+      <span class="${item.status}">${escapeHTML(item.explanation)}</span>
+    </div>
+  `).join("");
+
+  finalResults = {
+    friendName, answers: [...answers], details,
+    correct, checked, empty, percent
+  };
+}
+
+function escapeHTML(str) {
+  return String(str).replace(/[&<>"']/g, char => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;",
+    '"': "&quot;", "'": "&#39;"
+  })[char]);
+}
+
+function downloadResults() {
+  if (!finalResults) return;
+  const r = finalResults;
+  const content = [
+    "Айым и её лучшая подруга — результаты нашей игры",
+    `Участница: ${r.friendName}`,
+    `Результат после ручной проверки: ${r.checked ? r.percent + "%" : "не рассчитан"}`,
+    `Засчитано Айым: ${r.correct} из ${r.checked}`,
+    `Пропущено вопросов: ${r.empty}`,
+    "",
+    ...r.details.map((d, i) =>
+      `${i + 1}. ${d.question}\nОтвет: ${d.answer}\nСтатус: ${d.explanation}\n`
+    )
+  ].join("\n");
+
+  const blob = new Blob(["\uFEFF" + content], {
+    type: "text/plain;charset=utf-8"
+  });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "aiyim-test-results.txt";
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
+function restart() {
+  current = 0;
+  answers = Array(questions.length).fill("");
+  reviewStatuses = Array(questions.length).fill(null);
+  finalResults = null;
+  $("result").classList.add("hidden");
+  $("reviewStage").classList.add("hidden");
+  $("start").classList.remove("hidden");
+}
+</script>
+</body>
+</html>
